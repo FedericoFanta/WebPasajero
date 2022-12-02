@@ -1,0 +1,60 @@
+﻿@model IEnumerable<WebPasajero.Models.Pasajero>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (Model.Count() < 1)
+        {
+            <h3>No hay pasajeros</h3>
+        }
+        else
+        {
+
+   @* <p>
+        @Html.ActionLink("New Pasajero", "Create","Pasajero")
+    </p>*@
+
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Apellido)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaDeNacimiento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Ciudad)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.Nombre
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Apellido)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaDeNacimiento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ciudad)
+                    </td>
+                    <td>
+                        
+                        <a asp-action="Create" asp-controller="Pasajero">New Pasajero</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}

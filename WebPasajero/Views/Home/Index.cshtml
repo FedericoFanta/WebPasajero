@@ -1,0 +1,10 @@
+﻿@model WebPasajero.Models.Pasajero
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<h1> Bienvenidos a PASAJEROS:</h1>
+<a asp-action="Index" asp-controller="Pasajero">Pasajero</a>
+@Html.ActionLink("ir a Pasajero","Index","Pasajero")
